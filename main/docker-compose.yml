@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+
+  php74:
+    container_name: apache2-php74-sqlsrv
+    image: antonioanerao/debian10-php74-sqlsrv:latest
+    restart: on-failure
+   
+    networks:
+      - proxy
+      - default
+
+    volumes:
+      - debian10-php74-sqlsrv:/var/www
+      
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.php74-secure.entrypoints=websecure"
+      - "traefik.http.routers.php74-secure.rule=Host(`domain.com`,`www.domain.com`)"
+
+volumes:
+  debian10-php74-sqlsrv:
+
+networks:
+  proxy:
+    external: true
