@@ -23,3 +23,5 @@
 - Rode o Docker Compose
 
       $ docker-compose up -d
+
+- Antes de rodar o docker-compose do wordpress, leia as instruções que estão na pasta
