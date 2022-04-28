@@ -1,0 +1,46 @@
+version: "3.7"
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    networks:
+      - proxy
+      - default
+
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+
+    volumes:
+      - wordpress:/var/www/html
+      
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.php74-secure.entrypoints=websecure"
+      - "traefik.http.routers.php74-secure.rule=Host(`cominio.com.br`,`dominio.com.br`)"
+
+
+  db:
+    image: ubuntu/mysql:8.0-22.04_beta
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+    external: true
+  db:
+    external: true
+
+networks:
+  proxy:
+    external: true
