@@ -11,6 +11,10 @@
 - Editar o dominio no arquivo docker.compose.yml
 - Editar o dominio no arquivo data/traefik.yml
 - Editar a senha do Traefik Dashboard em data/configurations/dynamic.yml (formato bcrypt)
+- Alterar a permissão do arquivo data/acme.json para 600
+
+      chmod 600 acme.json
+      
 - Rode o Docker Compose
 
       $ docker-compose up -d
