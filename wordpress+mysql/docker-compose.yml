@@ -21,7 +21,7 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
       - "traefik.http.routers.php74-secure.entrypoints=websecure"
-      - "traefik.http.routers.php74-secure.rule=Host(`cominio.com.br`,`dominio.com.br`)"
+      - "traefik.http.routers.php74-secure.rule=Host(`dominio.com.br`,`dominio.com.br`)"
 
 
   db:
