@@ -19,9 +19,8 @@
 
       $ docker-compose up -d
       
-- Acesse a pasta main e edite o arquivo docker-compose.yml com seu dominio
-- Rode o Docker Compose
+- Acesse a pasta main e edite o arquivo docker-compose.yml com seu dominio e rode o Docker Compose (opção 1)
 
       $ docker-compose up -d
 
-- Antes de rodar o docker-compose do wordpress, leia as instruções que estão na pasta
+- Antes de rodar o docker-compose do wordpress, leia as instruções que estão na pasta (opç
