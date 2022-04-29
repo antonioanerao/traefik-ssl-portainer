@@ -11,7 +11,7 @@ services:
       - default
 
     volumes:
-      - debian10-php74-sqlsrv:/var/www
+      - debian10-php74-sqlsrv:/var/www/html
       
     labels:
       - "traefik.enable=true"
@@ -21,6 +21,7 @@ services:
 
 volumes:
   debian10-php74-sqlsrv:
+    external: true
 
 networks:
   proxy:
