@@ -16,8 +16,8 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
-      - "traefik.http.routers.php74-secure.entrypoints=websecure"
-      - "traefik.http.routers.php74-secure.rule=Host(`domain.com`,`www.domain.com`)"
+      - "traefik.http.routers.domain1-secure.entrypoints=websecure"
+      - "traefik.http.routers.domain1-secure.rule=Host(`domain.com`,`www.domain.com`)"
 
 volumes:
   debian10-php74-sqlsrv:
