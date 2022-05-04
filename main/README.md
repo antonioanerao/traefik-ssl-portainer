@@ -10,4 +10,5 @@
       $ docker volume create --driver local --opt type=none --opt device=$(pwd)/html --opt o=bind debian10-php74-sqlsrv
             
 - Rode o docker-compose
+
       $ docker-compose up -d
