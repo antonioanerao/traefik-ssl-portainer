@@ -26,6 +26,8 @@ services:
   db:
     image: ubuntu/mysql:8.0-22.04_beta
     restart: always
+    networks:
+      - proxy
     environment:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
